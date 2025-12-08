@@ -3,7 +3,10 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { Database } from './config/database';
 import { UserRoutes } from './routes/User';
-
+import { VisiteurRoutes } from './routes/Visiteur';
+import { MotifRoutes } from './routes/Motif';
+import { PraticienRoutes } from './routes/Praticien';
+import { VisiteRoutes } from './routes/Visite';
 
 // Chargement des variables d'environnement
 dotenv.config();
@@ -71,6 +74,18 @@ class App {
 
     const userRoutes = new UserRoutes();
     this.app.use('/api/users', userRoutes.router);
+
+    const visiteurRoutes = new VisiteurRoutes();
+    this.app.use('/api/visiteurs', visiteurRoutes.router);
+
+    const motifRoutes = new MotifRoutes();
+    this.app.use('/api/motifs', motifRoutes.router);
+
+    const praticienRoutes = new PraticienRoutes();
+    this.app.use('/api/praticiens', praticienRoutes.router);
+
+    const visiteRoutes = new VisiteRoutes();
+    this.app.use('/api/visite', visiteRoutes.router);
     
   }
 

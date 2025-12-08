@@ -1,3 +1,6 @@
+import { Types } from "mongoose";
+import { IPraticien } from './IPraticien';
+
 /**
  * Interface représentant un utilisateur
  */
@@ -5,9 +8,11 @@ export interface IVisiteur {
   _id?: string;
   nom: string;
   prenom: string;
+  visites?: Types.ObjectId[];
   email: string;
-  dateCreation?: Date;
-  telephone:Int16Array;
+  date_embauche?: Date;
+  telephone: string;
+  portefeuillePraticiens: IPraticien['_id'][];
 }
 
 
@@ -18,4 +23,6 @@ export interface ICreateVisiteur {
   nom: string;
   prenom: string;
   email: string;
+  date_embauche?: Date;
+  telephone: string;
 }

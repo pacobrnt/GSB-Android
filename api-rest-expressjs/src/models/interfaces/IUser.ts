@@ -1,5 +1,5 @@
 /**
- * Interface représentant un utilisateur
+ * Interface représentant un motif
  */
 export interface IUser {
   _id?: string;
@@ -11,7 +11,7 @@ export interface IUser {
 
 
 /**
- * Interface pour la création d'un utilisateur
+ * Interface pour la création d'un motif
  */
 export interface ICreateUser {
   nom: string;
